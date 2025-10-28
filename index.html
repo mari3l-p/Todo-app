@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <!-- css -->
+     <link rel="stylesheet" href="styles.css">
+    <title>Todo APP</title>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <div id="blue-bg">
+        <div id="grey-bg">
+            <svg id="plus-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg> 
+
+            <div id="task-form" class="hidden">
+                <!-- x-mark -->
+                <svg id="x-mark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 hidden">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+                <form action="">
+                    <!-- Form Inputs -->
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" autocomplete="off" class="text-input" required>
+                    <label for="date">Date:</label>
+                    <input type="date" name="date" id="date" class="text-input" required>
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="description" cols="32" rows="7" class="text-input"></textarea>
+                    <button class="button-30" role="button" id="form-btn" type="submit">Add Task</button>
+                </form>
+            </div>
+            <!-- dialog when user close unsaved changes -->
+            <dialog id="confirm-close-dialog">
+                <form method="dialog">
+                    <p>Discard unsaved changes?</p>
+                    <div id="dialog-btn">
+                        <button id="cancel-btn"  class="button-30" role="button">Cancel</button>
+                        <button  id="discard-btn" class="button-30" role="button">Discard</button>
+                    </div>
+                </form>
+            </dialog>
+            <div id="tasks-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
